@@ -1,0 +1,28 @@
+BRISA CIDADÃ - ENTREGA ACADÊMICA (API REST JAVA / SPRING BOOT)
+================================================================
+
+ATENÇÃO: este é um MODELO. Preencha todos os campos com dados reais e verifique cada link
+(abrindo-o em uma janela anônima) antes de enviar. Não envie com campos em branco ou de exemplo.
+
+INTEGRANTES
+-----------
+1. Nome completo: Nicole Alves Nogueira            RM: 555182
+
+LINKS
+-----
+Repositório GitHub (público): ______________________________________________
+API no Azure (URL pública):   ______________________________________________
+  - Swagger:                  <URL da API>/swagger-ui.html
+  - Health check:             <URL da API>/actuator/health
+Imagem no Docker Hub:         ______________________________________________
+  - Tag publicada:            latest e sha-<commit>
+
+CHECKLIST ANTES DO ENVIO
+------------------------
+[ ] Repositório público acessível e com o código na branch main
+[ ] Workflow do GitHub Actions concluído com sucesso (testes + publicação da imagem)
+[ ] Imagem visível no Docker Hub com as tags latest e sha-<commit>
+[ ] API no Azure respondendo em /actuator/health com status UP
+[ ] Swagger acessível e CRUD testado nas quatro entidades
+[ ] Dados persistem após reiniciar o App Service
+[ ] Nomes e RMs conferidos por todos os integrantes
