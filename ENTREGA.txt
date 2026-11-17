@@ -14,14 +14,14 @@ Repositório GitHub (público): https://github.com/Nicole-an/brisa-cidada-api
 API no Azure (URL pública):   ______________________________________________
   - Swagger:                  <URL da API>/swagger-ui.html
   - Health check:             <URL da API>/actuator/health
-Imagem no Docker Hub:         ______________________________________________
-  - Tag publicada:            latest e sha-<commit>
+Imagem no Docker Hub:         https://hub.docker.com/r/niican/brisa-cidada-api
+  - Tags publicadas:          latest e sha-<commit>
 
 CHECKLIST ANTES DO ENVIO
 ------------------------
-[ ] Repositório público acessível e com o código na branch main
-[ ] Workflow do GitHub Actions concluído com sucesso (testes + publicação da imagem)
-[ ] Imagem visível no Docker Hub com as tags latest e sha-<commit>
+[x] Repositório público acessível e com o código na branch main
+[x] Workflow do GitHub Actions concluído com sucesso (testes + publicação da imagem)
+[x] Imagem visível no Docker Hub com as tags latest e sha-<commit>
 [ ] API no Azure respondendo em /actuator/health com status UP
 [ ] Swagger acessível e CRUD testado nas quatro entidades
 [ ] Dados persistem após reiniciar o App Service
