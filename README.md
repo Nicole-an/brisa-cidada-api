@@ -318,17 +318,17 @@ mvnw.cmd -B verify        # Windows
 
 ### Imagem
 
-- Nome: `<usuario-dockerhub>/brisa-cidada-api`
+- Nome: `niican/brisa-cidada-api`
 - Tags: `latest` e `sha-<commit curto>` (rastreável ao commit)
 - Dockerfile multi-stage (Maven + JRE 17 Alpine), executa como usuário sem privilégios, expõe `8080`,
   `HEALTHCHECK` em `/actuator/health/liveness`.
 
 ```bash
-docker pull <usuario-dockerhub>/brisa-cidada-api:latest
+docker pull niican/brisa-cidada-api:latest
 docker run --rm -p 8080:8080 \
   -e DB_URL="jdbc:sqlserver://<host>:1433;databaseName=<banco>;encrypt=true;trustServerCertificate=false" \
   -e DB_USERNAME="<usuario>" -e DB_PASSWORD="<senha>" \
-  <usuario-dockerhub>/brisa-cidada-api:latest
+  niican/brisa-cidada-api:latest
 ```
 
 Build local: `docker build -t brisa-cidada-api:local .`
@@ -348,7 +348,7 @@ Secrets necessários (GitHub → *Settings → Secrets and variables → Actions
 | `DOCKERHUB_TOKEN` | Access token do Docker Hub com permissão *Read & Write* (Account settings → Personal access tokens) |
 
 A publicação só deve ser considerada concluída após uma execução bem-sucedida visível na aba *Actions* e a imagem
-aparecer em `https://hub.docker.com/r/<usuario-dockerhub>/brisa-cidada-api`.
+aparecer em `https://hub.docker.com/r/niican/brisa-cidada-api`.
 
 ## Implantação no Azure
 
@@ -365,7 +365,7 @@ APP=brisa-cidada-api-<sufixo>
 SQL_SERVER=sql-brisa-cidada-<sufixo>
 SQL_DB=brisa_cidada
 SQL_ADMIN=<usuario-admin>
-IMAGE=<usuario-dockerhub>/brisa-cidada-api:latest   # ou :sha-<commit>
+IMAGE=niican/brisa-cidada-api:latest   # ou :sha-<commit>
 
 az login
 az group create -n $RG -l $LOCATION
@@ -401,7 +401,7 @@ Observações:
   no firewall os IPs de saída do App Service (`az webapp show -g $RG -n $APP --query outboundIpAddresses`).
 - Alternativa: Azure Container Apps (`az containerapp up --image $IMAGE --target-port 8080 --ingress external
   --env-vars ...`), com as mesmas variáveis, preferencialmente usando *secrets* do Container Apps para a senha.
-- Para atualizar a versão: `az webapp config container set -g $RG -n $APP --container-image-name <usuario>/brisa-cidada-api:sha-<commit>`
+- Para atualizar a versão: `az webapp config container set -g $RG -n $APP --container-image-name niican/brisa-cidada-api:sha-<commit>`
   e reinicie o app.
 
 ### Validação no Azure

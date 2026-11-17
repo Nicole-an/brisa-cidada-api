@@ -10,7 +10,7 @@ INTEGRANTES
 
 LINKS
 -----
-Repositório GitHub (público): ______________________________________________
+Repositório GitHub (público): https://github.com/Nicole-an/brisa-cidada-api
 API no Azure (URL pública):   ______________________________________________
   - Swagger:                  <URL da API>/swagger-ui.html
   - Health check:             <URL da API>/actuator/health
