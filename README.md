@@ -21,7 +21,7 @@ cadastra pontos públicos de resfriamento e gera **alertas demonstrativos** com 
 - [Docker Hub e GitHub Actions](#docker-hub-e-github-actions)
 - [Implantação no Azure](#implantação-no-azure)
 - [Limitações e dados demonstrativos](#limitações-e-dados-demonstrativos)
-- [Pendências externas](#pendências-externas)
+- [Status da entrega](#status-da-entrega)
 
 ## Escopo
 
@@ -428,11 +428,9 @@ Logs: `az webapp log tail -g $RG -n $APP`.
 - Não há autenticação: em ambiente público, qualquer pessoa com a URL pode alterar dados.
 - Exclusões são físicas e bloqueadas quando há dependentes.
 
-## Pendências externas
+## Status da entrega
 
-Etapas que dependem de credenciais e ações de quem tem acesso (não executadas automaticamente):
-
-1. Criar o repositório público no GitHub e fazer push deste projeto na branch `main`.
-2. Cadastrar os secrets `DOCKERHUB_USERNAME` e `DOCKERHUB_TOKEN` e confirmar a execução do workflow e a imagem no Docker Hub.
-3. Criar os recursos no Azure, configurar as variáveis e validar health, Swagger, CRUD e persistência.
-4. Preencher e conferir o [ENTREGA.txt](ENTREGA.txt) com integrantes e links reais.
+- [x] Repositório público: https://github.com/Nicole-an/brisa-cidada-api
+- [x] GitHub Actions executado com sucesso (testes, incluindo SQL Server real via Testcontainers, e publicação da imagem)
+- [x] Imagem no Docker Hub: https://hub.docker.com/r/niican/brisa-cidada-api (tags `latest` e `sha-<commit>`)
+- [ ] **Pendente:** implantação no Azure (criar recursos, configurar variáveis e validar health, Swagger, CRUD e persistência)

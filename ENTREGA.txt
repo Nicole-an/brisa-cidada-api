@@ -11,7 +11,7 @@ INTEGRANTES
 LINKS
 -----
 Repositório GitHub (público): https://github.com/Nicole-an/brisa-cidada-api
-API no Azure (URL pública):   ______________________________________________
+API no Azure (URL pública):   PENDENTE - implantação no Azure ainda não realizada
   - Swagger:                  <URL da API>/swagger-ui.html
   - Health check:             <URL da API>/actuator/health
 Imagem no Docker Hub:         https://hub.docker.com/r/niican/brisa-cidada-api
